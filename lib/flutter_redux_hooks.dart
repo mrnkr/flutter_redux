@@ -159,7 +159,7 @@ typedef Dispatch = dynamic Function(dynamic action);
 Dispatch useDispatch<S>() => useStore<S>().dispatch;
 
 /// Selector Function
-typedef Selector<State, Output> = Output? Function(State state);
+typedef Selector<State, Output> = Output Function(State state);
 /// Equality Function
 typedef EqualityFn<T> = bool Function(T a, T b);
 
@@ -182,7 +182,7 @@ typedef EqualityFn<T> = bool Function(T a, T b);
 ///   }
 /// }
 /// ```
-Output? useSelector<State, Output>(Selector<State, Output> selector,
+Output? useSelector<State, Output>(Selector<State, Output?> selector,
     [EqualityFn? equalityFn]) {
   final store = useStore<State>();
   final snap = useStream<Output?>(
