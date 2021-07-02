@@ -29,7 +29,7 @@ void main() {
 class FlutterReduxApp extends HookWidget {
   final String title;
 
-  FlutterReduxApp({Key key, this.title}) : super(key: key);
+  FlutterReduxApp({Key? key, required this.title}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -50,10 +50,11 @@ class FlutterReduxApp extends HookWidget {
               Text(
                 'You have pushed the button this many times:',
               ),
-              Text(
-                count,
-                style: TextStyle(color: Colors.white, fontSize: 36),
-              ),
+              if (count != null)
+                Text(
+                  count,
+                  style: TextStyle(color: Colors.white, fontSize: 36),
+                ),
             ],
           ),
         ),

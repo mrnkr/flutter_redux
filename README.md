@@ -6,7 +6,7 @@
 
 A set of utilities that allow you to easily consume a [Redux](https://pub.dartlang.org/packages/redux) Store to build Flutter Widgets.
 
-This package is built to work with [Redux.dart](https://pub.dartlang.org/packages/redux) 3.0.0+.
+This package is built to work with [Redux.dart](https://pub.dartlang.org/packages/redux) 5.0.0+.
 
 This library is based on [flutter_redux](https://github.com/brianegan/flutter_redux), it actually started as a fork of that project. The implementation of `StoreProvider` available here is the same you will find in that lib, I removed the rest of the widgets offered by it and replaced them with my hooks. Clearly, I aimed to replicate the behavior of the hooks you'll find in [react-redux](https://github.com/reduxjs/react-redux), if you think I succeeded let me know by leaving a star in the repo!
 
@@ -19,7 +19,7 @@ This library is based on [flutter_redux](https://github.com/brianegan/flutter_re
 * `useStore` - Will return a reference to the store you provided via `StoreProvider`.
 * `useDispatch` - Will return a reference to the dispatch function for the store you provided via `StoreProvider`.
 * `useSelector` - Will return the result of applying a selector function to the state. To make these selectors I recommend either using `reselect` or `redux_toolkit` (`redux_toolkit` exports `reselect`).
-  
+
 ### Companion Libraries
 
 * [flipperkit_redux_middleware](https://pub.dartlang.org/packages/flipperkit_redux_middleware) - Redux Inspector (use [Flutter Debugger](https://github.com/blankapp/flutter-debugger)) for Flutter Redux apps
