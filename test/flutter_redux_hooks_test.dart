@@ -107,7 +107,7 @@ void main() {
 
     Widget Function(BuildContext) builder() {
       return (context) {
-        state = useSelector<String, String>((state) => state)!;
+        state = useSelector<String, String>((state) => state);
         return Container();
       };
     }

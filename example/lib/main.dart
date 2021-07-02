@@ -34,7 +34,7 @@ class FlutterReduxApp extends HookWidget {
   @override
   Widget build(BuildContext context) {
     final dispatch = useDispatch<int>();
-    final count = useSelector<int, String>((state) => state.toString())!;
+    final count = useSelector<int, String>((state) => state.toString());
 
     return MaterialApp(
       theme: ThemeData.dark(),
@@ -50,10 +50,11 @@ class FlutterReduxApp extends HookWidget {
               Text(
                 'You have pushed the button this many times:',
               ),
-              Text(
-                count,
-                style: TextStyle(color: Colors.white, fontSize: 36),
-              ),
+              if (count != null)
+                Text(
+                  count,
+                  style: TextStyle(color: Colors.white, fontSize: 36),
+                ),
             ],
           ),
         ),
