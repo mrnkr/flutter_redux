@@ -29,12 +29,12 @@ void main() {
 class FlutterReduxApp extends HookWidget {
   final String title;
 
-  FlutterReduxApp({Key key, this.title}) : super(key: key);
+  FlutterReduxApp({Key? key, required this.title}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     final dispatch = useDispatch<int>();
-    final count = useSelector<int, String>((state) => state.toString());
+    final count = useSelector<int, String>((state) => state.toString())!;
 
     return MaterialApp(
       theme: ThemeData.dark(),

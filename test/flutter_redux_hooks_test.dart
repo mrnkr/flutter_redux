@@ -25,22 +25,6 @@ void main() {
       expect(captor.store, store);
     });
 
-    testWidgets('throws a helpful message if no provider found',
-        (WidgetTester tester) async {
-      final store = Store<String>(
-        identityReducer,
-        initialState: 'I',
-      );
-      final widget = StoreProvider<String>(
-        store: store,
-        child: StoreCaptor<int>(),
-      );
-
-      await tester.pumpWidget(widget);
-
-      expect(tester.takeException(), isInstanceOf<StoreProviderError>());
-    });
-
     testWidgets('should update the children if the store changes',
         (WidgetTester tester) async {
       Widget widget(String state) {
@@ -65,7 +49,7 @@ void main() {
 
   group('useStore', () {
     testWidgets('should yield the same store', (tester) async {
-      Store<String> result;
+      late Store<String> result;
       final store = Store<String>(
         identityReducer,
         initialState: 'init',
@@ -92,7 +76,7 @@ void main() {
 
   group('useDispatch', () {
     testWidgets("should yield the store's dispatch function", (tester) async {
-      Dispatch result;
+      late Dispatch result;
       final store = Store<String>(
         identityReducer,
         initialState: 'init',
@@ -118,12 +102,12 @@ void main() {
   });
 
   group('useSelector', () {
-    Store<String> store;
-    String state;
+    late Store<String> store;
+    late String? state;
 
     Widget Function(BuildContext) builder() {
       return (context) {
-        state = useSelector<String, String>((state) => state);
+        state = useSelector<String, String>((state) => state)!;
         return Container();
       };
     }
@@ -164,7 +148,7 @@ void main() {
 class StoreCaptor<S> extends StatelessWidget {
   static const Key captorKey = Key('StoreCaptor');
 
-  Store<S> store;
+  late Store<S> store;
 
   StoreCaptor() : super(key: captorKey);
 
