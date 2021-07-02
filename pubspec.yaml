@@ -1,6 +1,6 @@
 name: flutter_redux_hooks
 description: A hook-based alternative to flutter_redux. Connect to your redux store in a familiar way.
-version: 0.1.3
+version: 0.2.0
 homepage: https://github.com/mrnkr/flutter_redux_hooks
 
 environment:

@@ -16,3 +16,7 @@ Initial Version of the library.
 ## 0.1.3
 
 * Updated all dependencies to support from their current minor release to the next major release.
+
+## 0.2.0
+
+* Updated to support null-safety
